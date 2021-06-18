@@ -1,13 +1,17 @@
-# import the argv module (argument variable/vector) which holds the arguments
-# specified when running this script from the command line, from the sys package
+# import the argv module (argument variable/vector) from the sys package
+# argv holds the arguments specified when running this script
+# from the command line
 from sys import argv
 # unpack argv and assign it to the variables on the left, in that order
 script, filename = argv
 
-# assign the file called "filename" to a variable called txt
-# open a file with the open() function
-txt = open(filename)
+# open the file with the open() function which returns the file object
+# assign the file object to a variable named txt
+txt = open(filename, "a")
+txt.write("appended some text")
+txt.close()
 
+txt = open(filename)
 # display this message on screen
 print(f"Here's your file {filename}:")
 # call a function named "read" on txt i.e. run the "read" command on it
